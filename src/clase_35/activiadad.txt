@@ -1,0 +1,27 @@
+Debe Crear un proyecto llamado Escuela
+
+Debe Crear un clase llamada Alumno con los atributos
+-Nombre
+-Promedio Matematica
+-Promedio Lenguaje
+-Promedio Historia
+-Promedio Ciencia
+-Promedio Final
+
+Debe crear una clase runner que implemente los siguiente
+
+Solicitar al usuario por consola el ingreso de 10 alumnos, solcitando los promedios de
+Matematica,lenguaje , Historia y ciencia, luego el sistema debe calcular el promedio del alumno y
+guardarlo en el atributo promedio Final
+
+Luego de imprimir en pantalla el nombre del alumno y su promedio final, además de un texto que indique
+si el alumno aprueba o reprueba
+
+consideraciones: 
+Usar arreglos
+
+Los promedio 3.5 son pasados a 4
+Los nombre de los alumnos deben ser mostrados en mayusculas.
+Debe agregar java doc a sus clases y atributos 
+
+**Desafio Extra mostrar el promedio general del Curso
