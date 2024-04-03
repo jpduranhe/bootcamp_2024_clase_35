@@ -1,38 +1,69 @@
 package clase_35;
 
+import java.util.Scanner;
+
 public class Runner {
 
 	public static void main(String[] args) {
 		
 		
-		Vehiculo autoNissan= new Vehiculo("Nissan","V16",2001,4);
+	Alumno[] alumnos= new Alumno[2];
+	Scanner scanner= new Scanner(System.in);
+		
+		for(int i=0; i < alumnos.length;i++){
+			System.out.println("-------------------------------");
+			Alumno alumno= new Alumno();
+			
+			System.out.println("Ingrese el nombre del Alumno:");
+			alumno.nombre= scanner.nextLine();
+			
+			System.out.println("Ingrese el promedio de Matematicas:");
+			alumno.promedioMatematica= scanner.nextDouble();
+			
+			System.out.println("Ingrese el promedio de Lenguaje:");
+			alumno.promedioLenguaje= scanner.nextDouble();
+			
+			System.out.println("Ingrese el promedio de Historia:");
+			alumno.promedioHistoria= scanner.nextDouble();
+			
+			System.out.println("Ingrese el promedio de Ciencia:");
+			alumno.promedioCiencia= scanner.nextDouble();
+			
+			promedio(alumno);
+			alumnos[i]=alumno;
+			scanner.nextLine();
+		}
+		
+		double acumulador=0;
+		for(Alumno alumno : alumnos) {
+			
+			String estado="Reprueba";
+			if(alumno.promedioFinal>=4) {
+				estado="Aprueba";
+			}
+			
+			acumulador+= alumno.promedioFinal;
+			
+			System.out.println("El Alumno "+alumno.nombre.toUpperCase()+ " promedio: "+alumno.promedioFinal+ " y estado final es "+estado);
+		}
+		System.out.println("El Promedio del curso es "+(acumulador/alumnos.length));
 		
 		
-		System.out.println(autoNissan.marca);
-		System.out.println(autoNissan.modelo);
-		System.out.println(autoNissan.anio);
-		System.out.println(autoNissan.cantidadRuedas);
 		
 		
 		
+	
+	}
+	
+	private static void promedio(Alumno alumno) {
+		double matematica=alumno.promedioMatematica;
+		double lenguaje=alumno.promedioLenguaje;
+		double historia=alumno.promedioHistoria;
+		double ciencia=alumno.promedioCiencia;
 		
+		double promedio=(matematica+lenguaje+historia+ciencia)/4;
 		
-		
-		
-		
-		
-		
-		
-		/*
-		Cuenta cuenta1= new Cuenta();
-		cuenta1.numeroDeCuenta=208598;
-		cuenta1.titular="Juan Perez";
-		cuenta1.saldo=50000.0;
-		
-		System.out.println(cuenta1.numeroDeCuenta);
-		System.out.println(cuenta1.titular);
-		System.out.println(cuenta1.saldo);
-		*/
+		alumno.promedioFinal= Math.round(promedio);
 	}
 
 }
